@@ -71,3 +71,25 @@ document.getElementById("riskForm").addEventListener("submit", function (event) 
     const riskName = document.getElementById("riskName").value;
     const riskLevel = document.getElementById("riskLevel").value;
     const department = document.getElementById("department").value;
+
+
+//Task 2: Adding Risk Items Dynamically
+addRiskItem(riskName, riskLevel, department);
+document.getElementById("riskForm").reset();
+});
+document.getElementById("increaseRiskLevels").addEventListener("click", increaseRiskLevels);
+
+// test cases task 2
+addRiskItem("Software System Failure", "High", "IT");
+addRiskItem("Legal Liabilities from Contracts", "Medium", "Legal");
+
+// test case task 3
+addRiskItem("Equipment Failure", "Medium", "Manufacturing");
+
+// test cases task 4
+addRiskItem("Customer Data Privacy Violation", "High", "IT");
+addRiskItem("HR compliance issue", "Low", "human resources");
+
+// test case task 5
+addRiskItem("Employee Retention", "Low", "HR");
+
