@@ -50,3 +50,24 @@ function increaseRiskLevels () {
         }
     });
 }
+//Task 4: Categorizing Risks by Level
+function updateRiskCardStyle(riskCard, riskLevel) {
+    switch (riskLevel.toLowerCase()) {
+        case "low":
+            riskCard.style.backgroundColor = "green";
+            break;
+        case "medium":
+            riskCard.style.backgroundColor = "yellow";
+            break;
+        case "high":
+            riskCard.style.backgroundColor = "red";
+            break;
+        default:
+            riskCard.style.backgroundColor = "white";
+    }
+}
+document.getElementById("riskForm").addEventListener("submit", function (event) {
+    event.preventDefault();
+    const riskName = document.getElementById("riskName").value;
+    const riskLevel = document.getElementById("riskLevel").value;
+    const department = document.getElementById("department").value;
