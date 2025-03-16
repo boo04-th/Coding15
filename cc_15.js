@@ -28,3 +28,25 @@ event.stopPropagation();
 
 riskDashboard.appendChild(riskCard);
 }
+
+//Task 5: Implementing Bulk Updates
+function increaseRiskLevels () {
+    const riskCards = document.querySelectorAll(".riskCard");
+    riskCards.forEach((riskCard) => {
+        const riskLevelText = riskCard.querySelector(".riskLevelText");
+        let currentLevel = riskLevelText.textContent.trim();
+
+        switch (currentLevel.toLowerCase()) {
+            case "low":
+                riskLevelText.textContent = "medium";
+                updateRiskCardStyle(riskCard, "medium");
+                break;
+            case "medium":
+                riskLevelText.textContent = "high";
+                updateRiskCardStyle(riskCard, "high");
+                break;
+            case "high":
+                default: // does nothing
+        }
+    });
+}
