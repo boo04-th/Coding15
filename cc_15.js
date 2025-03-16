@@ -17,3 +17,14 @@ function addRiskItem(riskName, riskLevel, department) {
 //Task 3: Removing Risk Items
 const resolveButton = riskCard.querySelector(".resolveButton");
 resolveButton.addEventListener("click", function (event) {
+//Task 6: Handling Event Propagation
+event.stopPropagation();
+riskDashboard.removeChild(riskCard);
+});
+
+riskCard.addEventListener("click", function (event) {
+event.stopPropagation();
+});
+
+riskDashboard.appendChild(riskCard);
+}
